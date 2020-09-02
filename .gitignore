@@ -4,3 +4,5 @@ env/
 bin/
 build/
 lib/
+
+__pycache__/
