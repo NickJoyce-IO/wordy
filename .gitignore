@@ -4,6 +4,5 @@ env/
 bin/
 build/
 lib/
-migrations/
 
 __pycache__/
