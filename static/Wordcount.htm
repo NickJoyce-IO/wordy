@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://localhost:5000/?url=https%3A%2F%2Frealpython.com -->
+<html ng-app="WordcountApp" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <title>Wordcount</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./Wordcount_files/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="./Wordcount_files/main.css">
+    <style>
+        .container {
+            max-width: 1000px;
+        }
+    </style>
+</head>
+
+<body ng-controller="WordcountController" class="ng-scope">
+
+
+<form role="form" ng-submit="getResults()" class="ng-pristine ng-invalid ng-invalid-required">
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5 col-sm-offset-1">
+                <h1>Wordcount 3000</h1>
+                <br>
+                
+                    <div class="form-group">
+                        <input type="text" name="url" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="url-box" placeholder="Enter URL..." style="max-width: 300px;" ng-model="url" required="">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary ng-binding" ng-disabled="loading">Submit</button>
+                    
+                
+                <div class="alert alert-danger ng-hide" role="alert" ng-show="urlerror">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    <span>There was an error submitting your URL.<br>
+                        Please check to make sure it is valid before trying again.</span>
+                </div>
+            </div>
+            <div class="col-sm-5 col-sm-offset-1">
+                <h2>Frequencies</h2>
+                <br>
+                <div id="results">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Word</th>
+                                <th>Count</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <!-- ngRepeat: (key, val) in wordcounts -->
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <img class="col-sm-3 col-sm-offset-4 ng-hide" src="./Wordcount_files/spinner.gif" ng-show="loading">
+            </div>
+            <br>
+            <div id="chart" data="wordcounts"></div>
+        </div>
+    </div></form>
+
+    
+    <br><br>
+    <script src="./Wordcount_files/d3.v3.min.js" charset="utf-8"></script>
+    <script src="./Wordcount_files/jquery-1.11.0.min.js"></script>
+    <script src="./Wordcount_files/bootstrap.min.js"></script>
+    <script src="./Wordcount_files/angular.min.js"></script>
+    <script src="./Wordcount_files/main.js"></script>
+
+
+</body></html>
